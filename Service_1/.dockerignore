@@ -1,0 +1,16 @@
+#ignore all markdonw files
+*.md
+
+#ignore hidden git folder
+.git
+
+#ignore .gitignore
+.gitignore
+
+#ignore venv __pychache__ folder
+venv
+*/__pychache__
+
+#ignore docker files
+Dockerfile
+.dockerignore
