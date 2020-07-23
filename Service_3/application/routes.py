@@ -1,3 +1,4 @@
+from application import app
 from flask import Flask, Response
 import random
 

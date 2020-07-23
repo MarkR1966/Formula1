@@ -1,4 +1,4 @@
-from randomcharsandnums.Service_1.application import app
+from application import app
 from flask import render_template
 
 import requests
