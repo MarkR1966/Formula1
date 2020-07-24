@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block body_content %}
+<h1>F1 Driver Team Pairing</h1>
+    <html>
+        <head>
+            <title>
+                F1 Driver Team Pairing
+            </title>
+        </head>
+        <body>
+            <h1>
+                Random F1 Driver Team Pairing Website
+            </h1>
+
+            <p>
+                {{ display }}
+            </p>
+
+            <button onclick="window.location.reload();">
+                Generate Pairing
+            </button>
+        </body>
+    </html> {% endblock %}

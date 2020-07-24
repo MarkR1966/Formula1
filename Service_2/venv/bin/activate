@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/a/docker/randomwords/randomcharsandnums/Service_2/venv"
+VIRTUAL_ENV="/home/a/docker/Formula1/Service_2/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
