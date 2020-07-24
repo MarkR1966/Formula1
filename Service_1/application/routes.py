@@ -5,6 +5,5 @@ import requests
 
 @app.route('/', methods = ['GET'])
 def home():
-    #response = requests.get('http://service_4:5003').text
-    response = "Driver Lewis Hamilton will drive for Renault"
+    response = requests.get('http://service_4:5003').text
     return render_template('home.html', title='Home', pairing = response)
