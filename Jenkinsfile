@@ -14,7 +14,7 @@ pipeline {
 
         }
 
-        stage('Pull Images') {
+        stage('Buid Services') {
         
                     steps {
                     
@@ -22,7 +22,7 @@ pipeline {
                         }
 
         }
-        
+
     }
 
 }
