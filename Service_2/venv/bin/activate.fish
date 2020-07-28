@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/a/docker/randomwords/randomcharsandnums/Service_2/venv"
+set -gx VIRTUAL_ENV "/home/a/docker/Formula1/Service_2/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
