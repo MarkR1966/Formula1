@@ -9,7 +9,7 @@ pipeline {
             steps {
 
                 sh 'chmod +x ./scripts/*.sh'
-                sh './scripts/pull_images.sh'
+                sh './scripts/build_images.sh'
                 }
 
         }
@@ -18,7 +18,7 @@ pipeline {
         
                     steps {
                     
-                        sh './scripts/build_service.sh'
+                        sh './scripts/build_services.sh'
                         }
 
         }
