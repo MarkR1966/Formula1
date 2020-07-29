@@ -1,5 +1,6 @@
 from application import app
 from flask import render_template
+from application.models import F1DriversandTeams
 
 import requests
 
