@@ -12,6 +12,6 @@ def generate_driver():
             driver=driver,
             team=team
     )
-    db.session.add(user)                                            #add record to database
+    db.session.add(f1dat)                                            #add record to database
     db.session.commit()                                             #commit the change to the database
     return Response(pairing, mimetype='text/plain')                 #return response to Service_1 in the correct format
