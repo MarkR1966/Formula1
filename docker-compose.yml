@@ -15,7 +15,7 @@ services:
             - service_2
             - service_3
         deploy:
-            replicas: 5
+            replicas: 2
 
     service_2:
         #build: ./Service_2
@@ -24,7 +24,7 @@ services:
         networks:
             - f1_network
         deploy:
-            replicas: 5
+            replicas: 2
 
 
     service_3:
@@ -34,7 +34,7 @@ services:
         networks:
             - f1_network
         deploy:
-            replicas: 5    
+            replicas: 2    
 
 
     service_4:
@@ -44,7 +44,7 @@ services:
         networks:
             - f1_network
         deploy:
-            replicas: 5    
+            replicas: 2   
 
 networks:
     f1_network:
