@@ -16,10 +16,10 @@ pipeline {
 
         stage('Build Services') {
         
-                    steps {
+            steps {
                     
-                        sh './scripts/build_services.sh'
-                        }
+                sh './scripts/build_services.sh'
+                }
 
         }
 
