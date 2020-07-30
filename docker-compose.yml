@@ -6,6 +6,13 @@ services:
         #build: ./Service_1
         #container_name: service_1
         image: markr1966/f1_service_1
+        environment:
+            MYSQL_DB_NAME: $(MYSQL_DB_NAME)
+            MYSQL_HOST: $(MYSQL_HOST)
+            MYSQL_PASSWORD: $(MYSQL_PASSWORD)
+            MYSQL_PORT: $(MYSQL_PORT)
+            MYSQL_USER: $(MYSQL_USER)
+            SECRET_KEY: $(SECRET_KEY)
         ports:
             - "5000:5000"
         networks:
@@ -41,6 +48,13 @@ services:
         #build: ./Service_4
         #container_name: service_4
         image: markr1966/f1_service_4
+        environment:
+            MYSQL_DB_NAME: $(MYSQL_DB_NAME)
+            MYSQL_HOST: $(MYSQL_HOST)
+            MYSQL_PASSWORD: $(MYSQL_PASSWORD)
+            MYSQL_PORT: $(MYSQL_PORT)
+            MYSQL_USER: $(MYSQL_USER)
+            SECRET_KEY: $(SECRET_KEY)
         networks:
             - f1_network
         deploy:
