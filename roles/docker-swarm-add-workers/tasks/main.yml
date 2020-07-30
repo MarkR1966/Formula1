@@ -1,0 +1,3 @@
+- name: Join worker to swarm with token
+  shell: docker swarm join --token {{ hostvars['token']['value'] }} {{ hostvars['manager_hostname']['value'] }}:2377
+  
