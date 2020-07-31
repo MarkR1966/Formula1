@@ -13,5 +13,5 @@ def generate_driver():
             team=str(r_team)
     )
     db.session.add(f1dat)                                            #add record to database
-    db.session.commit()                                             #commit the change to the database
+    #db.session.commit()                                             #commit the change to the database
     return Response(pairing, mimetype='text/plain')                 #return response to Service_1 in the correct format
