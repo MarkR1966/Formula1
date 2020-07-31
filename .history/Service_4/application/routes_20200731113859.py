@@ -9,8 +9,8 @@ def generate_driver():
     r_team = requests.get('http://service_3:5002/team').text          #get result from Service_3
     pairing = "Driver " + r_driver + " will drive for " + r_team        #create response for Service_1
     f1dat = F1dat(                                      #create record to persist data in db
-            driver=str(r_driver),
-            team=str(r_team)
+            driver=str(r_driver,
+            team=r_team
     )
     #db.session.add(f1dat)                                            #add record to database
     #db.session.commit()                                             #commit the change to the database
