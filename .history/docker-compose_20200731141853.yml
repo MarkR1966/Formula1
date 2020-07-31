@@ -53,8 +53,8 @@ services:
             - MYSQL_HOST: $(MYSQL_HOST)
             - MYSQL_PASSWORD: $(MYSQL_PASSWORD)
             - MYSQL_PORT: $(MYSQL_PORT)
-            - MYSQL_USER: $(MYSQL_USER)
-            - SECRET_KEY: $(SECRET_KEY)
+            - MYSQL_USER=$(MYSQL_USER)
+            - SECRET_KEY=$(SECRET_KEY)
         networks:
             - f1_network
         deploy:
