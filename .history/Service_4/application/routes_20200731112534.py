@@ -10,7 +10,7 @@ def generate_driver():
     pairing = "Driver " + r_driver + " will drive for " + r_team        #create response for Service_1
     f1dat = F1dat(                                      #create record to persist data in db
             Driver=r_driver,
-            Team=r_team
+            team=r_team
     )
     #db.session.add(f1dat)                                            #add record to database
     #db.session.commit()                                             #commit the change to the database
