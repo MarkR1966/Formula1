@@ -49,7 +49,7 @@ services:
         #container_name: service_4
         image: markr1966/f1_service_4
         environment:
-            MYSQL_DB_NAME="Formula1"                 #${MYSQL_DB_NAME}
+            MYSQL_DB_NAME: "Formula1"                 #${MYSQL_DB_NAME}
             MYSQL_HOST: ${MYSQL_HOST}
             MYSQL_PASSWORD: ${MYSQL_PASSWORD}
             MYSQL_PORT: ${MYSQL_PORT}
