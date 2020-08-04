@@ -9,7 +9,6 @@
             Text-align:center;
             }
         </style
-            
     </head>
     <body>
         <div class="center"
@@ -24,7 +23,7 @@
         </button>
     </div>
         <div>
-            <table class="table" style="width:50%;table-layout: fixed;margin-left:auto;margin-right:auto;">
+            <!-- <table class="table" style="width:50%;table-layout: fixed;margin-left:auto;margin-right:auto;">
                 <colgroup>
                     <col span="1" style="width: 25%;border-style: solid;border-color: #000000;">
                     <col span="1" style="width: 25%;border-style: solid;border-color: #000000;">
@@ -33,12 +32,14 @@
                 <tr>
                     <th>Driver</th>&nbsp;
                     <th>Team</th>&nbsp;
-                </tr>
+                </tr> -->
                 {% for dat in f1dat.items %}
-                    <tr class="tabletext">
+                    <!-- <tr class="tabletext">
                         <td><p>{{ dat.driver }}</p></td>
                         <td><p>{{ dat.team }}</p></td>
-                    </tr>
+                    </tr> -->
+                    <p>dat.driver</p>
+                    <p>dat.team</p>
                 {% endfor %}
             </table>
         </div>                
