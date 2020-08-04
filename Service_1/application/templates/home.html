@@ -5,10 +5,22 @@
             Random F1 Driver and Team Pairing Generator
         </title>
         <style>
-        .center {
-            Text-align:center;
+            table,
+            td,
+            th {
+                padding: 10px;
+                border: 2px solid #1c87c9;
+                border-radius: 5px;
+                background-color: #e5e5e5;
+                text-align: center;
             }
-        </style
+            h1,
+            h2,
+            p,
+            button {
+                text-align: center;
+            }
+          </style>
     </head>
     <body>
         <div>
@@ -20,7 +32,7 @@
             <br>
             <br>
             <br>
-            <p class="center">
+            <p>
                 {{ pairing }}
             </p>
             <br>
@@ -33,13 +45,13 @@
                 </colgroup>
 
                 <tr>
-                    <th class="center">Driver</th>&nbsp;
-                    <th class="center">Team</th>&nbsp;
+                    <th>Driver</th>&nbsp;
+                    <th>Team</th>&nbsp;
                 </tr> -->
                 {% for dat in f1dat %}
                     <tr class="tabletext">
-                        <td><p class="center">{{ dat.driver }}</p></td>
-                        <td><p class="center">{{ dat.team }}</p></td>
+                        <td><p>{{ dat.driver }}</p></td>
+                        <td><p>{{ dat.team }}</p></td>
                     </tr>
                 {% endfor %}
             </table>
