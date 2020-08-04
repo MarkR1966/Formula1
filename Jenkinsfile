@@ -4,6 +4,15 @@ pipeline {
 
     stages{
 
+        stage('Ansible'){
+
+            steps {
+
+                sh 'ansible-playbook -i inventory.cfg playbook.yml'
+
+            }
+            
+        }
         stage('Build Images') {
 
             steps {
