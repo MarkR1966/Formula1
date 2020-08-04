@@ -11,35 +11,41 @@
         </style
     </head>
     <body>
-        <div class="center"
+        <div>
             <h1>
                 Random F1 Driver and Team Pairing Generator
             </h1>
-            <p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p class="center">
                 {{ pairing }}
             </p>
-            <!-- <table class="table" style="width:50%;table-layout: fixed;margin-left:auto;margin-right:auto;">
+            <br>
+            <br>
+            <br>
+            <table class="table" style="width:50%;table-layout: fixed;margin-left:auto;margin-right:auto;">
                 <colgroup>
                     <col span="1" style="width: 25%;border-style: solid;border-color: #000000;">
                     <col span="1" style="width: 25%;border-style: solid;border-color: #000000;">
                 </colgroup>
 
                 <tr>
-                    <th>Driver</th>&nbsp;
-                    <th>Team</th>&nbsp;
+                    <th class="center">Driver</th>&nbsp;
+                    <th class="center">Team</th>&nbsp;
                 </tr> -->
-                <p>{{ f1dat }}</p>
                 {% for dat in f1dat %}
-                    <!-- <tr class="tabletext">
-                        <td><p>{{ dat.driver }}</p></td>
-                        <td><p>{{ dat.team }}</p></td>
-                    </tr> -->
-                    <p>{{ f1dat.items }}</p>
-                    <p>{{ dat }}</p>
-                    <p>{{ dat.driver }}</p>
-                    <p>{{ dat.team}}</p>
+                    <tr class="tabletext">
+                        <td><p class="center">{{ dat.driver }}</p></td>
+                        <td><p class="center">{{ dat.team }}</p></td>
+                    </tr>
                 {% endfor %}
-            <!-- </table> -->
+            </table>
+            <br>
+            <br>
+            <br>
             <button onclick="window.location.reload();">
                 Generate Pairing
             </button>
