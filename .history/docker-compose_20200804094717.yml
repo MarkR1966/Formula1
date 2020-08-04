@@ -1,0 +1,67 @@
+version: "3.7"
+
+services:
+
+    service_1:
+        #build: ./Service_1
+        #container_name: service_1
+        image: markr1966/f1_service_1
+        environment:
+            - MYSQL_DB_NAME=${MYSQL_DB_NAME}}                  #${MYSQL_DB_NAME
+            - MYSQL_HOST=${MYSQL_HOST}
+            - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+            - MYSQL_PORT=${MYSQL_PORT}
+            - MYSQL_USER=${MYSQL_USER}
+            - SECRET_KEY$={SECRET_KEY}
+        ports:
+            - "5000:5000"
+        networks:
+            - f1_network
+        depends_on:
+            - service_4
+            - service_2
+            - service_3
+        deploy:
+            replicas: 2
+
+    service_2:
+        #build: ./Service_2
+        #container_name: service_2
+        image: markr1966/f1_service_2
+        networks:
+            - f1_network
+        deploy:
+            replicas: 2
+
+
+    service_3:
+        #build: ./Service_3
+        #container_name: service_3
+        image: markr1966/f1_service_3
+        environment:
+            - MYSQL_DB_NAME="Formula1"                 #${MYSQL_DB_NAME}
+        networks:
+            - f1_network
+        deploy:
+            replicas: 2    
+
+
+    service_4:
+        #build: ./Service_4
+        #container_name: service_4
+        image: markr1966/f1_service_4
+        environment:
+            - MYSQL_DB_NAME="Formula1"                 #${MYSQL_DB_NAME}
+            # MYSQL_HOST: ${MYSQL_HOST}
+            # MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+            # MYSQL_PORT: ${MYSQL_PORT}
+            # MYSQL_USER: ${MYSQL_USER}
+            # SECRET_KEY: ${SECRET_KEY}
+        networks:
+            - f1_network
+        deploy:
+            replicas: 2   
+
+networks:
+    f1_network:
+        driver: overlay
