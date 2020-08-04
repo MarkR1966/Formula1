@@ -26,10 +26,10 @@
                     <th>Driver</th>&nbsp;
                     <th>Team</th>&nbsp;
                 </tr>
-                {% for records in f1dat.items %}
+                {% for dat in f1dat.items %}
                     <tr class="tabletext">
-                        <td><p>{{ f1dat.driver }}</p></td>
-                        <td><p>{{ f1dat.team }}</p></td>
+                        <td><p>{{ dat.driver }}</p></td>
+                        <td><p>{{ dat.team }}</p></td>
                     </tr>
                 {% endfor %}
             </table>

@@ -7,5 +7,6 @@ import requests
 @app.route('/', methods = ['GET'])
 def home():
     response = requests.get('http://service_4:5003').text                                           #Get response from Service_4
-    f1dat = F1dat.query.order_by(desc(F1dat.id)).limit(5).all()                                     #get records from database to display on web page
+    f1dat = F1dat.query.order_by(F1dat.f1id.desc()).limit(5).all()                                     #get records from database to display on web page
+    print(f1dat)
     return render_template('home.html', title='Home', pairing = response, f1dat = f1dat)            #render webpage showing response
