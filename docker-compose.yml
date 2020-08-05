@@ -13,8 +13,8 @@ services:
             - MYSQL_PORT=${MYSQL_PORT}
             - MYSQL_USER=${MYSQL_USER}
             - SECRET_KEY=${SECRET_KEY}
-        # ports:
-        #     - "5000:5000"
+        ports:
+            - "5000:5000"
         networks:
             - f1_network
         depends_on:
