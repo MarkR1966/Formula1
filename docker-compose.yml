@@ -3,11 +3,12 @@ version: "3.7"
 services:
 
     nginx:
-        image: nginx:/latest
+        image: amarkr1966/nginx
         ports:
             - "80:80"
         networks:
             - f1_network
+        deploy: 4
 
     service_1:
         #build: ./Service_1
@@ -29,7 +30,7 @@ services:
             - service_2
             - service_3
         deploy:
-            replicas: 2
+            replicas: 4
 
     service_2:
         #build: ./Service_2
@@ -38,7 +39,7 @@ services:
         networks:
             - f1_network
         deploy:
-            replicas: 2
+            replicas: 4
 
 
     service_3:
@@ -48,7 +49,7 @@ services:
         networks:
             - f1_network
         deploy:
-            replicas: 2    
+            replicas: 4    
 
 
     service_4:
@@ -65,7 +66,7 @@ services:
         networks:
             - f1_network
         deploy:
-            replicas: 2   
+            replicas: 4   
 
 networks:
     f1_network:

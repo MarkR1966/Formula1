@@ -13,6 +13,16 @@ pipeline {
         //     }
 
         // }
+        stage('Create Environment'){
+
+            steps {
+
+                sh 'chmod +x ./scripts/*.sh'
+
+            }
+
+        }
+
         stage("Create NGINX") {
 
             steps {
@@ -22,11 +32,11 @@ pipeline {
             }
 
         }
+
         stage('Build Images') {
 
             steps {
 
-                sh 'chmod +x ./scripts/*.sh'
                 sh './scripts/build_images.sh'
                 }
 
