@@ -13,7 +13,15 @@ pipeline {
         //     }
 
         // }
+        stage("Create NGINX") {
 
+            steps {
+
+                sh './scripts/nginx.sh'
+
+            }
+
+        }
         stage('Build Images') {
 
             steps {
