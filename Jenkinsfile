@@ -51,7 +51,7 @@ pipeline {
 
         }
 
-        stage(Clean up environment) {
+        stage("Clean up environment") {
 
             steps {
 
