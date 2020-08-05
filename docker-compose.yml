@@ -11,8 +11,8 @@ services:
         deploy: 4
 
     service_1:
-        #build: ./Service_1
-        #container_name: service_1
+        # build: ./Service_1
+        # container_name: service_1
         image: markr1966/f1_service_1
         environment:
             - MYSQL_DB_NAME=${MYSQL_DB_NAME}                  #${MYSQL_DB_NAME
