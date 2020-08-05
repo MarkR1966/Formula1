@@ -3,12 +3,13 @@ version: "3.7"
 services:
 
     nginx:
-        image: amarkr1966/nginx
+        image: markr1966/nginx
         ports:
             - "80:80"
         networks:
             - f1_network
-        deploy: 4
+        deploy:
+            replicas: 4
 
     service_1:
         # build: ./Service_1
