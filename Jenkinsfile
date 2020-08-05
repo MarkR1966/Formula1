@@ -51,6 +51,16 @@ pipeline {
 
         }
 
+        stage(Clean up environment) {
+
+            steps {
+
+                sh './scripts/tidy.sh'
+
+            }
+
+        }
+
     }
 
 }
