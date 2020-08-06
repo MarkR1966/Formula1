@@ -1,6 +1,6 @@
 ---
   # Required steps for installation of Docker through Ansible
-  - name: Check if Docker installed
+- name: Check if Docker installed
   shell: docker --version
   ignore_errors: true
   register: docker_status
