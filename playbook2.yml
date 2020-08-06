@@ -6,9 +6,9 @@
   roles:
     - docker-prune
 
-- name: Prune unused containers on manager and worker
-  hosts: localhost
-  connection: localhost
-  become: true
-  roles:
-    - docker-prune  
+# - name: Prune unused containers on manager
+  # hosts: localhost
+  # connection: localhost
+  # become: true
+  # roles:
+    # - docker-prune  

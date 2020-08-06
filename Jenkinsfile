@@ -53,11 +53,20 @@ pipeline {
 
         }
         // Remove any unused containers and images from swarm_manager and swarm_worker
-        stage("Clean up environment") {
+        stage("remove old images from swarm-worker") {
 
             steps {
 
                 sh 'ansible-playbook -i inventory.cfg playbook2.yml'
+
+            }
+
+        }
+        stage("remove old images from swarm-manager") {
+
+            steps {
+
+                sh 'docker prune -a -f'
 
             }
 
