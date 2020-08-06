@@ -1,0 +1,14 @@
+---
+# Define required steps to remove unused containers and images from swarm_manager and swarm_worker
+- name: Prune unused containers on worker
+  hosts: swarm_worker
+  become: true
+  roles:
+    - docker-prune
+
+# - name: Prune unused containers on manager
+  # hosts: localhost
+  # connection: localhost
+  # become: true
+  # roles:
+    # - docker-prune  

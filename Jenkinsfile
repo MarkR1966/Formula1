@@ -1,9 +1,10 @@
+// Requirements for jenkins to automaticall build the application requirements
 pipeline {
 
     agent any
 
     stages{
-
+        // Do initial setup
         stage('Setup Environment'){
 
             steps {
@@ -13,7 +14,7 @@ pipeline {
             }
 
         }
-
+        // Execute ansible script to ensure docker is installed and swarm is created
         stage('Ansible'){
 
             steps {
@@ -23,7 +24,7 @@ pipeline {
             }
 
         }
-
+        // Build nginx image with required files
         stage("Create NGINX") {
 
             steps {
@@ -33,7 +34,7 @@ pipeline {
             }
 
         }
-
+        // Build required images for Service_1, Service_2, Service_3, Service_4
         stage('Build Images') {
 
             steps {
@@ -42,7 +43,7 @@ pipeline {
                 }
 
         }
-
+        // Deploy the images to the Docker Swarm
         stage('Build Services') {
         
             steps {
@@ -51,12 +52,21 @@ pipeline {
                 }
 
         }
-
-        stage("Clean up environment") {
+        // Remove any unused containers and images from swarm_manager and swarm_worker
+        stage("remove old images from swarm-worker") {
 
             steps {
 
-                sh './scripts/tidy.sh'
+                sh 'ansible-playbook -i inventory.cfg playbook2.yml'
+
+            }
+
+        }
+        stage("remove old images from swarm-manager") {
+
+            steps {
+
+                sh 'docker system prune -af'
 
             }
 

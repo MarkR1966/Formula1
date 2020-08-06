@@ -1,6 +1,0 @@
-export MYSQL_DB_NAME=Formula1
-export MYSQL_HOST=34.89.36.49
-export MYSQL_PASSWORD=Sup3rn0va01
-export MYSQL_PORT=3306
-export MYSQL_USER=root
-export SECRET_KEY=51e7618d6f830753cc5b55cc29001ae4
