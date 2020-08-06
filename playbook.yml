@@ -16,6 +16,7 @@
 - name: Add worker to manager
   hosts: swarm_worker
   become: true
+  ignore_errors: true
   roles:
     - docker-swarm-add-workers
         
