@@ -4,16 +4,17 @@ pipeline {
 
     stages{
 
-        // stage('Ansible'){
+        stage('Ansible'){
 
-        //     steps {
+            steps {
 
-        //         sh 'ansible-playbook -i inventory.cfg playbook.yml'
+                sh 'ansible-playbook -i inventory.cfg playbook.yml'
 
-        //     }
+            }
 
-        // }
-        stage('Create Environment'){
+        }
+
+        stage('Setup Environment'){
 
             steps {
 
