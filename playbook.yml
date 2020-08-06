@@ -6,7 +6,7 @@
     - docker-installation
 
 - name: Install Docker-CE on manager
-  hosts: localhost
+  hosts: swarm_manager
   connection: localhost
   become: true
   roles:

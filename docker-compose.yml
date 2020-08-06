@@ -1,7 +1,7 @@
 version: "3.7"
 
 services:
-
+    # requirements for nginx image
     nginx:
         image: markr1966/nginx
         ports:
@@ -10,13 +10,13 @@ services:
             - f1_network
         deploy:
             replicas: 4
-
+    # requirements for Service_1 image
     service_1:
         # build: ./Service_1
         # container_name: service_1
         image: markr1966/f1_service_1
         environment:
-            - MYSQL_DB_NAME=${MYSQL_DB_NAME}                  #${MYSQL_DB_NAME
+            - MYSQL_DB_NAME=${MYSQL_DB_NAME}                  
             - MYSQL_HOST=${MYSQL_HOST}
             - MYSQL_PASSWORD=${MYSQL_PASSWORD}
             - MYSQL_PORT=${MYSQL_PORT}
@@ -32,7 +32,7 @@ services:
             - service_3
         deploy:
             replicas: 4
-
+    # requirements for Service_2 image
     service_2:
         #build: ./Service_2
         #container_name: service_2
@@ -42,7 +42,7 @@ services:
         deploy:
             replicas: 4
 
-
+    # requirements for Sercie_3 image
     service_3:
         #build: ./Service_3
         #container_name: service_3
@@ -51,14 +51,14 @@ services:
             - f1_network
         deploy:
             replicas: 4    
-
+    # requirements for Service_4 image
 
     service_4:
         #build: ./Service_4
         #container_name: service_4
         image: markr1966/f1_service_4
         environment:
-            - MYSQL_DB_NAME=${MYSQL_DB_NAME}                  #${MYSQL_DB_NAME
+            - MYSQL_DB_NAME=${MYSQL_DB_NAME}                  
             - MYSQL_HOST=${MYSQL_HOST}
             - MYSQL_PASSWORD=${MYSQL_PASSWORD}
             - MYSQL_PORT=${MYSQL_PORT}
@@ -68,7 +68,7 @@ services:
             - f1_network
         deploy:
             replicas: 4   
-
+# requirements for intra-service network
 networks:
     f1_network:
         driver: overlay
