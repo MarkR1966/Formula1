@@ -1,5 +1,5 @@
 #!/bin/bash
-
+source /var/lib/jenkins/.bashrc
 docker build --no-cache -t markr1966/f1_service_1 ./Service_1
 docker push markr1966/f1_service_1
 docker build --no-cache -t markr1966/f1_service_2 ./Service_2

@@ -2,9 +2,18 @@ version: "3.7"
 
 services:
 
+    nginx:
+        image: markr1966/nginx
+        ports:
+            - "80:80"
+        networks:
+            - f1_network
+        deploy:
+            replicas: 4
+
     service_1:
-        #build: ./Service_1
-        #container_name: service_1
+        # build: ./Service_1
+        # container_name: service_1
         image: markr1966/f1_service_1
         environment:
             - MYSQL_DB_NAME=${MYSQL_DB_NAME}                  #${MYSQL_DB_NAME
@@ -13,8 +22,8 @@ services:
             - MYSQL_PORT=${MYSQL_PORT}
             - MYSQL_USER=${MYSQL_USER}
             - SECRET_KEY=${SECRET_KEY}
-        ports:
-            - "5000:5000"
+        # ports:
+        #     - "5000:5000"
         networks:
             - f1_network
         depends_on:
@@ -22,7 +31,7 @@ services:
             - service_2
             - service_3
         deploy:
-            replicas: 2
+            replicas: 4
 
     service_2:
         #build: ./Service_2
@@ -31,7 +40,7 @@ services:
         networks:
             - f1_network
         deploy:
-            replicas: 2
+            replicas: 4
 
 
     service_3:
@@ -41,7 +50,7 @@ services:
         networks:
             - f1_network
         deploy:
-            replicas: 2    
+            replicas: 4    
 
 
     service_4:
@@ -58,7 +67,7 @@ services:
         networks:
             - f1_network
         deploy:
-            replicas: 2   
+            replicas: 4   
 
 networks:
     f1_network:

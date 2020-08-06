@@ -4,21 +4,40 @@ pipeline {
 
     stages{
 
-        // stage('Ansible'){
+        stage('Setup Environment'){
 
-        //     steps {
+            steps {
 
-        //         sh 'ansible-playbook -i inventory.cfg playbook.yml'
+                sh 'chmod +x ./scripts/*.sh'
 
-        //     }
+            }
 
-        // }
+        }
+
+        stage('Ansible'){
+
+            steps {
+
+                sh 'ansible-playbook -i inventory.cfg playbook.yml'
+
+            }
+
+        }
+
+        stage("Create NGINX") {
+
+            steps {
+
+                sh './scripts/nginx.sh'
+
+            }
+
+        }
 
         stage('Build Images') {
 
             steps {
 
-                sh 'chmod +x ./scripts/*.sh'
                 sh './scripts/build_images.sh'
                 }
 
@@ -30,6 +49,16 @@ pipeline {
                     
                 sh './scripts/build_services.sh'
                 }
+
+        }
+
+        stage("Clean up environment") {
+
+            steps {
+
+                sh './scripts/tidy.sh'
+
+            }
 
         }
 
