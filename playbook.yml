@@ -1,4 +1,5 @@
 ---
+# Ansibe playbook for Docker installation to swarm
 - name: Install Docker-CE on worker
   hosts: swarm_worker
   become: true
@@ -6,8 +7,8 @@
     - docker-installation
 
 - name: Install Docker-CE on manager
-  hosts: localhost
-  connection: localhost
+  hosts: swarm_manager
+  # connection: localhost
   become: true
   roles:
     - docker-installation
