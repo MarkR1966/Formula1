@@ -1,5 +1,5 @@
 #!/bin/bash
-# Ensure required environment variables are available for the containers when the 
+# Ensure required environment variables are available for the containers when they get built/updated
 source /var/lib/jenkins/.bashrc
 # if stack does not exist then build otherwise update existing services
 if [[ "$(docker stack services f1dat 2> /dev/null)" == "" ]]; then
