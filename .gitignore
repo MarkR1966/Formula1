@@ -2,4 +2,4 @@
 *.pyc
 **/venv/
 **/.vscode/
-.bashrc
+**/.bashrc

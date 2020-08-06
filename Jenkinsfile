@@ -4,21 +4,21 @@ pipeline {
 
     stages{
 
-        stage('Ansible'){
-
-            steps {
-
-                sh 'ansible-playbook -i inventory.cfg playbook.yml'
-
-            }
-
-        }
-
         stage('Setup Environment'){
 
             steps {
 
                 sh 'chmod +x ./scripts/*.sh'
+
+            }
+
+        }
+
+        stage('Ansible'){
+
+            steps {
+
+                sh 'ansible-playbook -i inventory.cfg playbook.yml'
 
             }
 
