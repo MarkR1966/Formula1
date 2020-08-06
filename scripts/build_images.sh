@@ -1,17 +1,10 @@
 #!/bin/bash
-
-if [[ "$(docker images -q markr1966/f1_service_1:latest 2> /dev/null)" == "" ]]; then
-    docker build -t markr1966/f1_service_1 ./Service_1
-fi
-
-if [[ "$(docker images -q markr1966/f1_service_2:latest 2> /dev/null)" == "" ]]; then
-    docker build -t markr1966/f1_service_2 ./Service_2
-fi
-
-if [[ "$(docker images -q markr1966/f1_service_1:latest 2> /dev/null)" == "" ]]; then
-    docker build -t markr1966/f1_service_3 ./Service_3
-fi
-
-if [[ "$(docker images -q markr1966/f1_service_1:latest 2> /dev/null)" == "" ]]; then
-    docker build -t markr1966/f1_service_4 ./Service_4
-fi
+source /var/lib/jenkins/.bashrc
+docker build --no-cache -t markr1966/f1_service_1 ./Service_1
+docker push markr1966/f1_service_1
+docker build --no-cache -t markr1966/f1_service_2 ./Service_2
+docker push markr1966/f1_service_2
+docker build --no-cache -t markr1966/f1_service_3 ./Service_3
+docker push markr1966/f1_service_3
+docker build --no-cache -t markr1966/f1_service_4 ./Service_4
+docker push markr1966/f1_service_4

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>
+                Random F1 Driver and Team Pairing Generator
+            </title>
+        </head>
+        <body>
+            <h1>
+                Random F1 Driver and Team Pairing Generator
+            </h1>
+
+            <p>
+                {{ pairing }}
+            </p>
+
+            <button onclick="window.location.reload();">
+                Generate Pairing
+            </button>
+        </body>
+{% comment %} #        <div> {% endcomment %}
+{% comment %} #            <table class="table" style="width:80%;table-layout: fixed;margin-left:auto;margin-right:auto;"> {% endcomment %}
+{% comment %} #                <colgroup> {% endcomment %}
+{% comment %} #                    col span="1" style="width: 40%;border-style: solid;border-color: black"> {% endcomment %}
+{% comment %} #                    col span="1" style="width: 40%;border-style: solid;border-color: black"> {% endcomment %}
+{% comment %} #                </colgroup> {% endcomment %}
+{% comment %} # {% endcomment %}
+{% comment %} #                <tr> {% endcomment %}
+{% comment %} #                    <th>Driver</th>&nbsp; {% endcomment %}
+{% comment %} #                    <th>Team</th>&nbsp; {% endcomment %}
+{% comment %} #                </tr> {% endcomment %}
+{% comment %} #                {% for i in f1dat %} {% endcomment %}
+{% comment %} #                    <tr class="tabletext"> {% endcomment %}
+{% comment %} #                        <td><p>{{ f1dat.driver }}</p></td> {% endcomment %}
+{% comment %} #                        <td><p>{{ f1dat.team }}</p></td> {% endcomment %}
+{% comment %} #                    </tr> {% endcomment %}
+{% comment %} #                {% endfor %} {% endcomment %}
+{% comment %} #            </table> {% endcomment %}
+{% comment %} #        </div> {% endcomment %}
+{% comment %} #    </html>     {% endcomment %}

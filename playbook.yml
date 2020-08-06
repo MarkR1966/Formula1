@@ -1,0 +1,22 @@
+---
+- name: Install Docker-CE on worker
+  hosts: swarm_worker
+  become: true
+  roles:
+    - docker-installation
+
+- name: Install Docker-CE on manager
+  hosts: localhost
+  connection: localhost
+  become: true
+  roles:
+    - docker-installation
+    - docker-swarm-init
+
+- name: Add worker to manager
+  hosts: swarm_worker
+  become: true
+  ignore_errors: true
+  roles:
+    - docker-swarm-add-workers
+        
