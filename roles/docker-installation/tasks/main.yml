@@ -1,4 +1,5 @@
 ---
+  # Required steps for installation of Docker through Ansible
     - name: Install docker dependencies
       apt:
         name: ['apt-transport-https', 'ca-certificates', 'curl', 'software-properties-common']
@@ -31,7 +32,7 @@
         state: started
     
     - name: Add user to docker group
-      shell: usermod -aG docker a
+      shell: usermod -aG docker jenkins
       tags: docker      
         
 

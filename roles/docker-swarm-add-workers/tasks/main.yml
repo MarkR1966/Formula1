@@ -1,5 +1,15 @@
+---
+# Required steps for joining a worker to Docker swarm through Ansible
+# Only run if not part of swarm
+- name: Check swarm status
+  shell: docker ps
+  ignore_errors: true
+  register: swarm_status
+  tags: swarm
+
 - name: Join worker to swarm with token
   shell: "docker swarm join --token {{ hostvars['token']['value'] }} {{ hostvars['manager_hostname']['value'] }}:2377"
-  ignore_errors: true
+  when: swarm_status.rc != 0
+  run_once: true
   tags: swarm
   

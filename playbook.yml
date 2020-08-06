@@ -1,4 +1,5 @@
 ---
+# Ansibe playbook for Docker installation to swarm
 - name: Install Docker-CE on worker
   hosts: swarm_worker
   become: true

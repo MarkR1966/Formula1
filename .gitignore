@@ -1,5 +1,8 @@
+# Ignore pycache directories
 **/__pychache__/
-*.pyc
+# Ignore any pycache files
+**/*.pyc
+# Ignore any venv directories
 **/venv/
+# Ignore any VSCODE directories
 **/.vscode/
-**/.bashrc

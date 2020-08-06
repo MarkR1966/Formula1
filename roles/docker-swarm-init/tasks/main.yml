@@ -1,3 +1,6 @@
+---
+# Required steps for setup of Docker swarm through Ansible
+# only do this if the swarm does not exist
 - name: Check swarm status
   shell: docker node ls
   ignore_errors: true
