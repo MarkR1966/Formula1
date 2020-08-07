@@ -8,7 +8,7 @@
 
 - name: Install Docker-CE on manager
   hosts: localhost
-  connection: localhost
+  connection: local
   become: true
   roles:
     - docker-installation
