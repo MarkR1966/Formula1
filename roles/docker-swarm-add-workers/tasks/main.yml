@@ -2,7 +2,7 @@
 # Required steps for joining a worker to Docker swarm through Ansible
 # Only run if not part of swarm
 - name: Check swarm status
-  shell: docker ps
+  shell: docker node ls
   ignore_errors: true
   register: swarm_status
   tags: swarm
