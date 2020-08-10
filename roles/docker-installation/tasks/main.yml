@@ -1,38 +1,54 @@
 ---
   # Required steps for installation of Docker through Ansible
-    - name: Install docker dependencies
-      apt:
-        name: ['apt-transport-https', 'ca-certificates', 'curl', 'software-properties-common']
-        state: latest
-        update_cache: yes
-      tags: docker
-    
-    - name: Get docker GPG key
-      apt_key:
-        url: https://download.docker.com/linux/ubuntu/gpg 
-        state: present
-      tags: docker
-    
-    - name: Add docker packages to local repository
-      apt_repository:
-        repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable 
-        state: present
-      tags: docker
-    
-    - name: Install docker
-      apt:
-        name: docker-ce 
-        state: latest
-        update_cache: yes
-      tags: docker
-    
-    - name: Start docker
-      service:
-        name: docker
-        state: started
-    
-    - name: Add user to docker group
-      shell: usermod -aG docker jenkins
-      tags: docker      
-        
+- name: Check if Docker installed
+  shell: docker --version
+  ignore_errors: true
+  register: docker_status
+  tags: docker
 
+- name: Install docker dependencies
+  apt:
+    name: ['apt-transport-https', 'ca-certificates', 'curl', 'software-properties-common']
+    state: latest
+    update_cache: yes
+  when: docker_status.rc != 0
+  run_once: true
+  tags: docker
+  
+
+- name: Get docker GPG key
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg 
+    state: present
+  when: docker_status.rc != 0
+  run_once: true
+  tags: docker
+   
+- name: Add docker packages to local repository
+  apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable 
+    state: present
+  when: docker_status.rc != 0
+  run_once: true
+  tags: docker
+   
+- name: Install docker
+  apt:
+    name: docker-ce 
+    state: latest
+    update_cache: yes
+  when: docker_status.rc != 0
+  run_once: true
+  tags: docker
+   
+- name: Start docker
+  service:
+    name: docker
+    state: started
+
+- name: Add user to docker group
+  shell: usermod -aG docker jenkins
+  when: docker_status.rc != 0
+  run_once: true
+  tags: docker
+ 
