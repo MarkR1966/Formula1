@@ -1,8 +1,6 @@
 # Information required to build Service_1 image and include required python libraries
 # Use alpine 3.11 image with included python from Docker Hub. Used due to small image size
 FROM python:alpine3.11
-# Update files
-RUN apt update -y
 # Create directory to store Service_1 application in
 RUN mkdir -p /opt/f1
 # Copy the required files to the direcory
