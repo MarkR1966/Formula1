@@ -35,7 +35,9 @@ Due to my interest in Formula 1 racing Series I designed my website to aalow vis
 
 ## ERD
 * Once a Driver and Team are  generated, they are recorded in the database and assigned a unique ID. The last five records are then displayed on the homepage
-
+<p align="center">
+    <img src="https://i.imgur.com/efqk8NA.png">
+</p>
 ## Python
 * Service 1 Displays a web page showing the Current Driver and Team Pairing, a button to generate a new pairing and a table showing the last 5 records of the Database. WHen the screen s refreshed a new pairing is requested from Service 4
 * Service 2 has a tuple list of Drivers names from the 2020 F1 Season. A name is randomly selected from the list and returned to Serice 4 when requested
