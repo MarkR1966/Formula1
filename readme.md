@@ -35,12 +35,18 @@ Due to my interest in Formula 1 racing Series I designed my website to aalow vis
 
 ## ERD
 * Once a Driver and Team are  generated, they are recorded in the database and assigned a unique ID. The last five records are then displayed on the homepage
+<p align="center">
+    <img src="https://imgur.com/fa2FDkc">
+</p>
 
 ## Python
 * Service 1 Displays a web page showing the Current Driver and Team Pairing, a button to generate a new pairing and a table showing the last 5 records of the Database. WHen the screen s refreshed a new pairing is requested from Service 4
 * Service 2 has a tuple list of Drivers names from the 2020 F1 Season. A name is randomly selected from the list and returned to Serice 4 when requested
 * Service 3 has a tuple list of Team names from the 2020 F1 Season. A name is randomly selected from the list and returned to Serice 4 when requested
 * Service 4 requests a Driver from Service 2 and a Team from Service 3. These are stored in a MYSQL Database with a unique key ID. These responses are combined and returned to Service 1 as a single response.
+<p align="center">
+    <img src="https://imgur.com/JxViFZX">
+</p>
 
 ## MySQL
 * Although only a single Database table was required to hold the information, the MySQL Database is running as an instance on GCP. This helps to make it more easily accessible by multiple VMs that would be accessing it when the containers were hosted across the swarm. 
@@ -51,14 +57,19 @@ Due to my interest in Formula 1 racing Series I designed my website to aalow vis
 
 # Deployment
 ## CI Pipeline
-![imageofcipipeline](https://github.com/sophiecosgrove/sfia2/blob/development/images/CIPipeline.png)
+<p align="center">
+    <img src="https://imgur.com/SsFttGP">
+</p>
 * I created 4 microservice APIs using Flask and Python for the coding . Service 1 provided the user interface of the app, hosting a website displaying the single home page containing Driver and Team Pairing information. When the home page is refreshed or the 'Generate Pairing' button is activated by the user, the home route sends a get request to service 4 to receive some data. Service 4 then requests a random Driver response from service 2 and a random Team response from service 3. Service 4 adds these to 2 responses to a MySQL Database and then puts them together and returns this to service 1, where it is finally displayed for the user on the home page as well as in a list showing the last 5 generated. Initially the 4 APIs were run in a local Python virtual environment to ensure that they all communicated correctly together to produce the required results. Docker was then utilised to allow the containerisation of these APIs and deployment throughout a swarm to allow redundancy. NGINX was also deployed into the stack as a  reverse-proxy. This meant that traffic was redirected from port 80 to the app on port 5000.   
 * The VCS service used was GitHub and I utilised a Webhook so that whenever new code was pushed to the development branch, it would trigger Jenkins to build a pipeline. In this pipeline I automated the use of Ansible, which installed Docker on each of the VMs if required and also set up the Docker Swarm. I automated the builds of the Docker images through Jenkins then deployed the service stack across the swarm and tidied up the images from the previous builds.
 
 # Risk Assessment
- My initial risk considerations were mainly theoretical as I had not got to grips with the concepts and technologies we would be using throughout the project. The allocated time for this project was shorter than previously experienced, so I was concerned this would pose a risk to the project being completed. However, some of the concepts I was already familiar with from the last project and there was not as much programming to do for the actual app but instead setting up the services which did not take too long. Therefore, the project was successfully completed on time. 
-* In the on-going risk assessment, I logged some of the risks I faced when working on the project, incase they arose again and to document their effect on the project. The biggest problem I faced was with NGINX as the image was missing some important files needed for it to run properly, such as the conf.d directory and default.conf file. I had to download a stable image rather than the latest image from dockerhub. Another issue that arose was when setting up the ability for the manager to SSH into the other VMs to enable Ansible to work, it was important that I only allowed the connection from the IPs of my VMs on port 22 and not have it open to the internet. 
-!* My final risk assessment is my consideration of risks that may pose a threat to the app in the future. They are mainly considerations of how the app could be improved should it be released for public consumption. Due to the ability to upscale apps in both Docker and Flask, I believe that it would be possible to achieve the improvements stated above to improve the user experience. 
+<p align="center">
+    <img src="https://imgur.com/EjvJO21">
+</p>
+<p align="center">
+    <img src="https://imgur.com/1vXtbwF">
+</p>
 
 # Best Practices
 * I utilised a venv when installing packages and when making changes to the python code.
