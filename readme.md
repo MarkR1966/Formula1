@@ -36,7 +36,7 @@ Due to my interest in Formula 1 racing Series I designed my website to aalow vis
 ## ERD
 * Once a Driver and Team are  generated, they are recorded in the database and assigned a unique ID. The last five records are then displayed on the homepage
 <p align="center">
-    <img src="https://imgur.com/fa2FDkc">
+    <img src="https://i.imgur.com/fa2FDkc.png">
 </p>
 
 ## Python
@@ -45,7 +45,7 @@ Due to my interest in Formula 1 racing Series I designed my website to aalow vis
 * Service 3 has a tuple list of Team names from the 2020 F1 Season. A name is randomly selected from the list and returned to Serice 4 when requested
 * Service 4 requests a Driver from Service 2 and a Team from Service 3. These are stored in a MYSQL Database with a unique key ID. These responses are combined and returned to Service 1 as a single response.
 <p align="center">
-    <img src="https://imgur.com/JxViFZX">
+    <img src="https://i.imgur.com/JxViFZX.png">
 </p>
 
 ## MySQL
@@ -58,17 +58,17 @@ Due to my interest in Formula 1 racing Series I designed my website to aalow vis
 # Deployment
 ## CI Pipeline
 <p align="center">
-    <img src="https://imgur.com/SsFttGP">
+    <img src="https://i.imgur.com/SsFttGP.png">
 </p>
 * I created 4 microservice APIs using Flask and Python for the coding . Service 1 provided the user interface of the app, hosting a website displaying the single home page containing Driver and Team Pairing information. When the home page is refreshed or the 'Generate Pairing' button is activated by the user, the home route sends a get request to service 4 to receive some data. Service 4 then requests a random Driver response from service 2 and a random Team response from service 3. Service 4 adds these to 2 responses to a MySQL Database and then puts them together and returns this to service 1, where it is finally displayed for the user on the home page as well as in a list showing the last 5 generated. Initially the 4 APIs were run in a local Python virtual environment to ensure that they all communicated correctly together to produce the required results. Docker was then utilised to allow the containerisation of these APIs and deployment throughout a swarm to allow redundancy. NGINX was also deployed into the stack as a  reverse-proxy. This meant that traffic was redirected from port 80 to the app on port 5000.   
 * The VCS service used was GitHub and I utilised a Webhook so that whenever new code was pushed to the development branch, it would trigger Jenkins to build a pipeline. In this pipeline I automated the use of Ansible, which installed Docker on each of the VMs if required and also set up the Docker Swarm. I automated the builds of the Docker images through Jenkins then deployed the service stack across the swarm and tidied up the images from the previous builds.
 
 # Risk Assessment
 <p align="center">
-    <img src="https://imgur.com/EjvJO21">
+    <img src="https://i.imgur.com/EjvJO21.png">
 </p>
 <p align="center">
-    <img src="https://imgur.com/1vXtbwF">
+    <img src="https://i.imgur.com/1vXtbwF.png">
 </p>
 
 # Best Practices
