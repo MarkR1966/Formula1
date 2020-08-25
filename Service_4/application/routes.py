@@ -5,8 +5,8 @@ import requests
 
 @app.route('/', methods = ['GET'])
 def generate_driver():
-    r_driver = requests.get('http://service_2:5001/driver').text        # Get result from Service_2
-    r_team = requests.get('http://service_3:5002/team').text            # Get result from Service_3
+    r_driver = requests.get('http://service-2:5001/driver').text        # Get result from Service_2
+    r_team = requests.get('http://service-3:5002/team').text            # Get result from Service_3
     pairing = "Driver " + r_driver + " will drive for " + r_team        # Create response for Service_1
     f1dat = F1dat(                                                      # Create record to persist data in db
             driver=str(r_driver),

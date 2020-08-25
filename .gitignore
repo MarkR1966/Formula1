@@ -6,3 +6,4 @@
 **/venv/
 # Ignore any VSCODE directories
 **/.vscode/
+**/*config_map.yml
