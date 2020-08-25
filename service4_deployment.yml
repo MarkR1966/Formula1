@@ -35,6 +35,6 @@ spec:
           - containerPort: 5003
         envFrom:
           - configMapRef:
-            nam: my-configmap
+              name: my-configmap
   
  
