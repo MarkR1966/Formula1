@@ -1,5 +1,5 @@
 # python3 requirements file for Servie_1 application
-certifi==2020.6.20
+certifi==2022.12.7
 chardet==3.0.4
 click==7.1.2
 Flask==1.1.2
